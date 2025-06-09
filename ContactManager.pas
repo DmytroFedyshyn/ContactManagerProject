@@ -153,10 +153,15 @@ procedure TForm1.btnSaveClick(Sender: TObject);
 var
   F: TextFile;
   i: Integer;
+  FileName: string;
 begin
   if SaveDialog.Execute then
   begin
-    AssignFile(F, SaveDialog.FileName);
+    FileName := SaveDialog.FileName;
+    if ExtractFileExt(FileName) = '' then
+      FileName := FileName + '.csv';
+
+    AssignFile(F, FileName);
     Rewrite(F);
     for i := 0 to Contacts.Count - 1 do
       Writeln(F, Contacts[i].FirstName + ',' +
@@ -201,4 +206,3 @@ begin
 end;
 
 end.
-
