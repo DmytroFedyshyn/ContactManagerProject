@@ -6,8 +6,6 @@ A simple desktop application written in Delphi for managing personal contacts.
 - Add, delete, save, and load contacts
 - Email and phone number validation
 - Save contacts to a `.csv` file
-- Clean UI using `TStringGrid`
-- Light theme (default Windows style)
 
 ## Contact structure:
 - First Name
